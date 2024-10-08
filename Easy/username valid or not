@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class UsernameValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a username: ");
+        String username = scanner.nextLine();
+        System.out.println(isValidUsername(username) ? "The username is valid." : "The username is invalid.");
+        scanner.close();
+    }
+    public static boolean isValidUsername(String username) {
+        if (username.length() < 5 || username.length() > 15 || Character.isDigit(username.charAt(0))) return false;
+        for (char ch : username.toCharArray()) if (!Character.isLetterOrDigit(ch) && ch != '_') return false;
+        return true;
+    }
+}
