@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class CharacterPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the Character to be printed: ");
+        String character = scanner.nextLine();
+        System.out.print("Max Number of times printed: ");
+        int maxCount = scanner.nextInt();
+        for (int i = 1; i <= maxCount; i++)
+            System.out.println((character + " ").repeat(i).trim());
+        scanner.close();
+    }
+}
