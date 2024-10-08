@@ -1,0 +1,8 @@
+import java.util.Scanner;
+public class RemoveVowels {
+    public static void main(String[] args) {
+        System.out.print("Enter a string: ");
+        String result = new Scanner(System.in).nextLine().replaceAll("[aeiouAEIOU]", "");
+        System.out.println("The string without vowels is: " + result);
+    }
+}
