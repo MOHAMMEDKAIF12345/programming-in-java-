@@ -1,0 +1,32 @@
+import java.util.HashSet;
+import java.util.Scanner;
+public class CompositeNumberCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements in the array: ");
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+        System.out.println("Number of Composite Numbers = " + countCompositeNumbers(array));
+        scanner.close();
+    }
+    private static int countCompositeNumbers(int[] array) {
+        HashSet<Integer> composites = new HashSet<>();
+        for (int num : array) {
+            if (num > 1 && isComposite(num)) {
+                composites.add(num);
+            }
+        }
+        return composites.size();
+    }
+    private static boolean isComposite(int num) {
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) return true;
+        }
+        return false;
+    }
+}
