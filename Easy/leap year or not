@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class LeapYearChecker {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter Date (dd/mm/yyyy): ");
+        String[] parts = s.next().split("/");
+        
+        try {
+            int year = Integer.parseInt(parts[2]);
+            System.out.println((year % 4 == 0 && year % 100 != 0 || year % 400 == 0) ? 
+                "Given year is Leap Year" : "Given year is Non Leap Year");
+        } catch (Exception e) {
+            System.out.println("Invalid input.");
+        }
+    }
+}
