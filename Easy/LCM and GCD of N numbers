@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class LCMGCDCalculator {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter N: ");
+        int n = s.nextInt(), gcd = 0, lcm = 1;
+        for (int i = 0; i < n; i++) {
+            int num = s.nextInt();
+            gcd = i == 0 ? num : gcd(gcd, num);
+            lcm = lcm(lcm, num);
+        }
+        System.out.println("GCD = " + gcd + ", LCM = " + lcm);
+    }
+    static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    static int lcm(int a, int b) {
+        return a / gcd(a, b) * b; 
+    }
+}
