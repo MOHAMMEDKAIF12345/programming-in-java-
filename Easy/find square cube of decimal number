@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class SquareAndCube {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        double num = scanner.nextDouble();
+        double square = num * num;
+        double cube = num * num * num;
+        System.out.printf("Given Number: %.2f%n", num);
+        System.out.printf("Square Number: %.2f%n", square);
+        System.out.printf("Cube Number: %.3f%n", cube);
+        scanner.close();
+    }
+}
