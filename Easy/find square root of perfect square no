@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class SquareRootFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number: ");
+        int number = scanner.nextInt();
+
+        if (number < 0) {
+            System.out.println("Square Root: Imaginary numbers (not a perfect square)");
+        } else {
+            double sqrt = Math.sqrt(number);
+            if (sqrt == Math.floor(sqrt)) {
+                System.out.printf("Square Root: %.0f, %.0f%n", sqrt, -sqrt);
+            } else {
+                System.out.println("Square Root: Not a perfect square");
+            }
+        }
+        
+        scanner.close();
+    }
+}
