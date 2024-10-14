@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class ArmstrongNumberChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        try {
+            int number = Integer.parseInt(scanner.nextLine());
+            System.out.println(number == armstrongSum(number) ? 
+                "Given number is an Armstrong number" : 
+                "Given number is not an Armstrong number");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input: Please enter a valid integer.");
+        }
+        scanner.close();
+    }
+    private static int armstrongSum(int number) {
+        int sum = 0, digits = String.valueOf(number).length();
+        for (int n = number; n > 0; n /= 10) {
+            sum += Math.pow(n % 10, digits);
+        }
+        return sum;
+    }
+}
