@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class MenuSelection {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\nMenu:");
+            System.out.println("1. If Statement");
+            System.out.println("2. Switch Statement");
+            System.out.println("3. For Loop");
+            System.out.println("4. While Loop");
+            System.out.println("5. Do-While Loop");
+            System.out.println("6. Exit");
+            System.out.print("Select an option (1-6): ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("If Statement Syntax:\nif (condition) {\n    // code to execute\n}");
+                    break;
+                case 2:
+                    System.out.println("Switch Statement Syntax:\nswitch (expression) {\n    case value:\n        // code to execute\n        break;\n    default:\n        // default code\n}");
+                    break;
+                case 3:
+                    System.out.println("For Loop Syntax:\nfor (initialization; condition; update) {\n    // code to execute\n}");
+                    break;
+                case 4:
+                    System.out.println("While Loop Syntax:\nwhile (condition) {\n    // code to execute\n}");
+                    break;
+                case 5:
+                    System.out.println("Do-While Loop Syntax:\ndo {\n    // code to execute\n} while (condition);");
+                    break;
+                case 6:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please select a valid option.");
+            }
+        } while (choice != 6);
+
+        scanner.close();
+    }
+}
