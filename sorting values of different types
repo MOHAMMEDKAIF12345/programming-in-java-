@@ -1,0 +1,18 @@
+import java.util.Arrays;
+class GenericSorter<T extends Comparable<T>> {
+    private T[] array;
+    public GenericSorter(T[] array) {
+        this.array = array;
+    }
+    public void sort() {
+        Arrays.sort(array);
+        System.out.println("Sorted: " + Arrays.toString(array));
+    }
+}
+public class GenericSortingExample {
+    public static void main(String[] args) {
+        new GenericSorter<>(new Integer[]{5, 3, 8, 1, 4}).sort();
+        new GenericSorter<>(new String[]{"Banana", "Apple", "Orange", "Grape"}).sort();
+        new GenericSorter<>(new Double[]{5.5, 3.3, 8.8, 1.1, 4.4}).sort();
+    }
+}
