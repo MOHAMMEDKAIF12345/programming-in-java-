@@ -1,0 +1,22 @@
+class Overload {
+    private int value1, value2;
+    public void assignValues(int v1) {
+        assignValues(v1, 0);
+    }
+    public void assignValues(int v1, int v2) {
+        this.value1 = v1;
+        this.value2 = v2;
+        System.out.println("Values assigned: " + value1 + ", " + value2);
+    }
+    public void assignValues() {
+        assignValues(0, 0);
+    }
+}
+public class OverloadExample {
+    public static void main(String[] args) {
+        Overload overload = new Overload();
+        overload.assignValues(10, 20); 
+        overload.assignValues(15);      
+        overload.assignValues();         
+    }
+}
