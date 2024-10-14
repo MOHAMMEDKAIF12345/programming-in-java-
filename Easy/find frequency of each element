@@ -1,0 +1,23 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class FrequencyCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter elements of the array (space-separated):");
+        String[] input = scanner.nextLine().split(" ");
+        
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+        for (String numStr : input) {
+            int num = Integer.parseInt(numStr);
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+        System.out.println("Element | Frequency");
+        System.out.println("--------------------------");
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            System.out.printf("%7d | %9d%n", entry.getKey(), entry.getValue());
+        }
+        
+        scanner.close();
+    }
+}
