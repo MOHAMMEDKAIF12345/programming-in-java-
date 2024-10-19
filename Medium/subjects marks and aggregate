@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class StudentGrade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double total = 0;
+        String[] subjects = {"Python", "C Programming", "Mathematics", "Physics"};
+        for (String subject : subjects) {
+            System.out.print("Enter marks in " + subject + ": ");
+            double mark = scanner.nextDouble();
+            if (mark < 0 || mark > 100) {
+                System.out.println("Invalid marks. Enter between 0 and 100.");
+                return;
+            }
+            total += mark;
+        }
+        double aggregate = total / subjects.length;
+        String grade = (aggregate > 75) ? "DISTINCTION" :
+                       (aggregate >= 60) ? "FIRST DIVISION" :
+                       (aggregate >= 50) ? "SECOND DIVISION" :
+                       (aggregate >= 40) ? "THIRD DIVISION" : "FAIL";
+        System.out.printf("Total = %.2f%nAggregate = %.2f%n%s%n", total, aggregate, grade);
+        scanner.close();
+    }
+}
