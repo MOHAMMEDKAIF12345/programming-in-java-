@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class BonusCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the grade (A/B): ");
+        String grade = scanner.nextLine().toUpperCase();
+        System.out.print("Enter the salary: ");
+        double salary = 0;
+        try {
+            salary = Double.parseDouble(scanner.nextLine());
+            if (salary < 0) throw new NumberFormatException();
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid salary. Please enter a non-negative number.");
+            return;
+        }
+        double bonusPercentage = (grade.equals("A") ? 0.05 : grade.equals("B") ? 0.10 : -1);
+        if (bonusPercentage == -1) {
+            System.out.println("Invalid grade. Please enter A or B.");
+            return;
+        }
+        if (salary < 10000) bonusPercentage += 0.02;
+
+        double bonus = salary * bonusPercentage;
+        System.out.printf("Salary = %.2f%nBonus = %.2f%nTotal = %.2f%n", salary, bonus, salary + bonus);
+        
+        scanner.close();
+    }
+}
